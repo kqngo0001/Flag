@@ -1,0 +1,86 @@
+/*
+
+ * Name:Khai Ngo
+
+ * Date:3/13/2020
+
+ * Course Number:CSC-112
+
+ * Course Name:Intermediate Topics in Java Programming Syllabus
+
+ * Problem Number:Homework 1
+
+ * Email: kqngo0001@student.stcc.edu
+
+ * Description: Chinese Flag
+
+ */
+package Flag;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+ 
+public class flag2 extends Application {
+	  @Override // Override the start method in the Application class
+	  public void start(Stage primaryStage) {
+
+	    // Create a scene and place it in the stage
+	    Scene scene = new Scene(retPane(),600,400);
+	    primaryStage.setTitle("ShowImage"); 
+	    primaryStage.setScene(scene); 
+	    primaryStage.show(); 
+	    primaryStage.setResizable(false);
+	  }
+	  
+	  
+ 
+	  public static Pane retPane() {
+		  Pane pane = new Pane();
+		  pane.setStyle("-fx-background-color : #de2910ff");
+		      Image image = new Image("https://cs.stcc.edu/wp-content/uploads/2020/03/chineseflagstar.png");
+		     ImageView iv = new ImageView(image);
+		     iv.xProperty().bind(pane.widthProperty().divide(10));
+		     iv.yProperty().bind(pane.heightProperty().divide(10));
+		     pane.getChildren().add(iv);
+		     
+		     ImageView imageView2 = new ImageView(image);
+		     imageView2.setFitHeight(50);
+		     imageView2.setPreserveRatio(true);
+		     imageView2.setFitWidth(100);
+		     pane.getChildren().add(imageView2);
+		     
+		     ImageView imageView3 = new ImageView(image);
+		     imageView3.setFitHeight(50);
+		     imageView3.setPreserveRatio(true);
+		     imageView3.setFitWidth(100);
+		     pane.getChildren().add(imageView3);
+		     
+		     ImageView imageView4 = new ImageView(image);
+		     imageView4.setFitHeight(50);
+		     imageView4.setPreserveRatio(true);
+		     imageView4.setFitWidth(100);
+		     pane.getChildren().add(imageView4);
+		     
+		     ImageView imageView5 = new ImageView(image);
+		     imageView5.setFitHeight(50);
+		     imageView5.setPreserveRatio(true);
+		     imageView5.setFitWidth(100);
+		     pane.getChildren().add(imageView5);
+			return pane;
+	  }
+	  
+    /**
+     * The main method is only needed for the IDE with limited JavaFX support.
+     * Not needed for running from the command line.
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+}
